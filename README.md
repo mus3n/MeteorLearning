@@ -1,3 +1,5 @@
-#Demo Git Repo
+#Meteor Projects Repo
 
-This is the first README File i have done.
+This Repo Contains several Coding examples for Meteor webdevelopment.
+
+by Christian Ringwald
