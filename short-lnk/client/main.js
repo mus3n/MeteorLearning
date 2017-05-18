@@ -4,10 +4,12 @@ import {Tracker} from 'meteor/tracker';
 import {onAuthChange, routes} from './../imports/routes/routes';
 
 
+//Check if the User is Authenticated at all times
 Tracker.autorun( ()=>{
   const isAuthenticated = !!Meteor.userId();
   onAuthChange(isAuthenticated);
 } );
+
 
 Meteor.startup(() => {
   ReactDOM.render(routes, document.getElementById('App'));
