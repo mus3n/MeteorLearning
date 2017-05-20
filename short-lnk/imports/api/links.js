@@ -30,8 +30,39 @@ Meteor.methods({
         {
           _id: shortid.generate(),
           url,
-          userId: this.userId
+          userId: this.userId,
+          visible: true
 
+        }
+      );
+    },
+    "links.setVisibility"(_id,visible){
+      if(!this.userId){
+        throw new Meteor.Error("not authorized","UserId is undefined, you are not logged in.");
+      }
+
+      new SimpleSchema({
+        _id:{
+          type: String,
+          min: 1
+        }
+      }).validate({_id});
+
+      new SimpleSchema({
+        visible:{
+          type: Boolean,
+          min: 1
+        }
+      }).validate({visible});
+
+      //Updating the _id Link
+      Links.update(
+        {
+          _id: _id,
+          userId: this.userId
+        },
+        {
+          $set: {visible: visible}
         }
       );
     }
