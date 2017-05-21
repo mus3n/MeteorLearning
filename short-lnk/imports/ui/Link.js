@@ -9,12 +9,14 @@ export default ()=>{
   return (
     <div>
         <PrivateHeader title="Short Link Application"/>
+        <div className="page-content">
+          <LinksListFilter/>
 
-        <LinksListFilter/>
+          <AddLink/>
 
-        <AddLink/>
+          <LinksList/>
+        </div>
 
-        <LinksList/>
     </div>
   );
 }
