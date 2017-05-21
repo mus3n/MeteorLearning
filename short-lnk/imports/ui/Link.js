@@ -12,9 +12,9 @@ export default ()=>{
 
         <LinksListFilter/>
 
-        <LinksList/>
-
         <AddLink/>
+
+        <LinksList/>
     </div>
   );
 }
