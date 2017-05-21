@@ -28,6 +28,7 @@ Meteor.startup(() => {
 
       // End HTTP Request
       res.end();
+      Meteor.call("links.trackVisit",_id);
 
     }else{
       next();
